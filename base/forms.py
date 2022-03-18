@@ -15,10 +15,10 @@ class RoomForm(ModelForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ["username", "name", "email", "bio"]
+        fields = ["avatar","username", "name", "email", "bio"]
 
 
 class MyUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["username", "name", "email","password1", "password2", "bio"]
+        fields = ["avatar", "username", "name", "email","password1", "password2", "bio"]

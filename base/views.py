@@ -60,7 +60,7 @@ def register(request):
     register_form = MyUserCreationForm()
 
     if request.method == "POST":
-        register_form = MyUserCreationForm(request.POST)
+        register_form = MyUserCreationForm(request.POST, request.FILES)
 
         if register_form.is_valid():
             user = register_form.save(commit=False)
@@ -249,7 +249,7 @@ def update_profile(request):
     user_form = UserForm(instance=user)
 
     if request.method == "POST":
-        user_form=UserForm(request.POST, instance=user)
+        user_form=UserForm(request.POST, request.FILES, instance=user)
 
         if user_form.is_valid():
             user_form.save()
