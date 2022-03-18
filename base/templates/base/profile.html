@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+  <main class="profile-page layout layout--3">
+    <div class="container">
+      <!-- Topics Start -->
+      {% include 'base/topics_component.html' %}
+      <!-- Topics End -->
+
+      <!-- Room List Start -->
+      <div class="roomList">
+        <div class="profile">
+          <div class="profile__avatar">
+            <div class="avatar avatar--large active">
+              <img src="https://randomuser.me/api/portraits/men/11.jpg" />
+            </div>
+          </div>
+          <div class="profile__info">
+            <h3>{{user.username | title}}</h3>
+            <h4><a href="{% url 'user_followers' user.id %}">followers ({{user_followers.count}})</a></h4>
+
+            <h4><a href="{% url 'user_following' user.id %}">followings ({{user_followings.count}})</a></h4>
+        
+            {% if request.user == user %}
+            <a href="{% url 'update_profile' %}" class="btn btn--main btn--pill">Edit Profile</a>
+            {% endif %}
+
+            {% if request.user != user %}
+              <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="action" value="follow" hidden>
+                <input type="submit" value="follow"  class="btn btn--main btn--pill">
+              </form>
+            {% endif %}
+
+            {% if request.user != user %}
+            <form action="" method="POST">
+              {% csrf_token %}
+              <input type="text" name="action" value="unfollow" hidden>
+              <input type="submit" value="unfollow"  class="btn btn--main btn--pill">
+            </form>
+          {% endif %}
+
+          </div>
+          <div class="profile__about">
+            <h3>About</h3>
+            <p>
+            {{user.bio}}
+            </p>
+          </div>
+        </div>
+
+        <div class="roomList__header">
+          <div>
+            <h2>Study Rooms Hosted by {{user.username}}</a>
+            </h2>
+          </div>
+        </div>
+        {% include 'base/feed_component.html' %}
+      </div>
+      <!-- Room List End -->
+
+      <!-- Activities Start -->
+      {% include 'base/activity_component.html' with activity_header="Recent Activity" %}
+      <!-- Activities End -->
+    </div>
+  </main>
+
+{% endblock %}
