@@ -3,7 +3,7 @@ This allow users to create rooms and chat about anything
 
 ## Features 
 - users can follow and un-folllow each other
-- creating rooms for different participant
+- creating chat rooms for different purpose
 - authorization and authentication
 
 ## Technologies
