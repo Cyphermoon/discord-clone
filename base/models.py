@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class User(AbstractUser):
 
     REQUIRED_FIELDS = []
 
-    avatar = models.ImageField(default="avatar.svg")
+    avatar = CloudinaryField('image', default='avatar.svg')
 
 class TimeStampModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)

@@ -1,5 +1,7 @@
 asgiref==3.5.0
 Brotli==1.0.9
+certifi==2023.5.7
+cloudinary==1.33.0
 Django==4.0.3
 django-dotenv==1.4.2
 djangorestframework==3.13.1
@@ -7,5 +9,7 @@ gunicorn==21.1.0
 packaging==23.1
 Pillow==9.0.1
 pytz==2021.3
+six==1.16.0
 sqlparse==0.4.2
+urllib3==1.26.16
 whitenoise==6.5.0

@@ -1,3 +1,4 @@
 .env
 /theme
 /db.sqlite3
+/uploads

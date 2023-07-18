@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 import pprint
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'cloudinary',
     'rest_framework',
     'base.apps.BaseConfig',
     'api',
@@ -159,7 +162,7 @@ STATICFILES_DIRS = [
 ]
 
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = BASE_DIR / 'uploads'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -169,3 +172,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# configuration to use cloudinary service
+cloudinary.config(
+     cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+     api_key=os.environ.get("CLOUDINARY_API_KEY"),
+     api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+ )
