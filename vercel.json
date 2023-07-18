@@ -1,14 +1,20 @@
 {
     "builds": [
-        {
-            "src": "studdy_buddy/wsgi.py",
-            "use": "@vercel/python"
+      {
+        "src": "studdy_buddy/wsgi.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb",
+          "pythonVersion": "3.8",
+          "pip": "requirements.txt"
         }
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "studdy_buddy/wsgi.py"
-        }
+      {
+        "src": "/(.*)",
+        "dest": "studdy_buddy/wsgi.py"
+      }
     ]
-}
+  }
+  
