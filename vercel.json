@@ -3,11 +3,7 @@
       {
         "src": "studdy_buddy/wsgi.py",
         "use": "@vercel/python",
-        "config": {
-          "maxLambdaSize": "15mb",
-          "pythonVersion": "3.9.5",
-          "pip": "requirements.txt"
-        }
+        "config": {"maxLambdaSize": "15mb"}
       }
     ],
     "routes": [
