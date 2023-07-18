@@ -69,7 +69,6 @@ def register(request):
             return redirect("home")
 
         else:
-            print(register_form.errors)
             messages.error(request, "an error occurred during registration")
 
     context = {
