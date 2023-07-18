@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
-import pprint
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
@@ -183,7 +182,3 @@ cloudinary.config(
      api_key=os.environ.get("CLOUDINARY_API_KEY"),
      api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
  )
-
-# Deploy checklist settings
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
