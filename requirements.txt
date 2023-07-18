@@ -3,7 +3,6 @@ Brotli==1.0.9
 certifi==2023.5.7
 cloudinary==1.33.0
 Django==4.0.3
-django-dotenv==1.4.2
 djangorestframework==3.13.1
 gunicorn==21.1.0
 packaging==23.1

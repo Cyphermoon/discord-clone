@@ -183,3 +183,7 @@ cloudinary.config(
      api_key=os.environ.get("CLOUDINARY_API_KEY"),
      api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
  )
+
+# Deploy checklist settings
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
