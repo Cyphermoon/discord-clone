@@ -1,3 +1,5 @@
 .env
 /theme
 /db.sqlite3
+dumpdata.json
+
